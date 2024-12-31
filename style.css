@@ -1,0 +1,559 @@
+/* style.css */
+/* Transición para el fondo y color del cuerpo */
+
+html,body {
+  background-color: #ffffff;
+  overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
+  
+ 
+  transition: background-color 0.5s ease, color 0.5s ease;
+    /*min-height: 100svh; /* Altura mínima del viewport */
+    /*display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;   
+    justify-content: center; /* Centrado del contenido */
+    /*gap: 1.5rem; /* Separación entre elementos */
+    /*color: var(--clr-primary); /* Texto claro */
+    /*padding: 1rem;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.216) 1px, rgba(0, 0, 0, 0) 1px); /* Fondo con patrón de círculos */
+    /*background-size: 40px 40px; /* Tamaño del patrón */
+}
+canvas {
+  /*display: block; /* Ocupa toda la pantalla */
+  position: absolute; /*posisción absoluta*/
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  pointer-events: none;
+
+
+}
+
+/* Transición para los enlaces de navegación */
+.nav-link {
+  transition: color 0.5s ease;
+}
+
+/* Transición para los botones */
+.theme-button {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+/* Transición para la barra de navegación */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Asegura que esté encima de otros elementos */
+    background-color: rgba(255, 255, 255, 0); /* Fondo semi-transparente */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.195); /* Borde sutil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Modo claro */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+.navbar-brand .logo-k {
+  color: #000000;
+}
+
+body.light-theme .container.border {
+  background-color: #000000;
+  border-color: #040404;
+}
+
+body.light-theme .border-success {
+  border-color: #198754;
+}
+
+body.light-theme .bg-light {
+  background-color: #232323 !important;
+}
+
+/* Modo oscuro */
+body.dark-theme {
+  background-color: #000000;
+  color: #e0e0e0;
+}
+
+body.dark-theme .container.border {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+body.dark-theme .border-success {
+  border-color: #0b8100;
+}
+
+body.dark-theme .bg-light {
+  background-color: #000000 !important;
+}
+/* Modo claro */
+body.light-theme .evento-digital {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-theme .evento-digital .container {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+body.light-theme .evento-digital .badge {
+  background-color: #000000;
+  color: #f8f9fa;
+}
+
+/* Modo oscuro */
+body.dark-theme .evento-digital {
+  background-color: #000000;
+  color: #e0e0e0;
+}
+
+body.dark-theme .evento-digital .container {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+
+
+body.dark-theme .evento-digital .badge {
+  background-color: #000000;
+  color: #e0e0e0;
+}
+
+body.dark-theme .evento-digital .text-danger {
+  color: #f44336 !important; /* Ajustar para mejor visibilidad */
+}
+
+body.dark-theme .evento-digital .text-muted {
+  color: #ede5e5 !important; /* Ajustar el texto atenuado */
+}
+.btn i {
+  font-size: 1.5rem; /* Tamaño de los íconos */
+}
+
+.btn:hover {
+  background-color: #ffffff; /* Cambia ligeramente el fondo al pasar el cursor */
+}
+
+.tooltip-inner {
+  background-color: black;
+  color: white;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.tooltip-arrow {
+  border-bottom-color: black !important;
+}
+
+
+/* Animación del ícono del botón */
+.rotate-icon {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(360deg);
+}
+
+
+/* Ajusta otros estilos específicos */
+
+/* Estilo base para los íconos */
+.tech-icon {
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+}
+
+
+.tech-item {
+  background-color: #ffffff1b; /* Fondo oscuro */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+  box-shadow: 0px 8px 20px rgba(163, 160, 160, 0.5); /* Sombra */
+}
+
+.tech-icon {
+  font-size: 2rem; /* Tamaño de los iconos */
+  color: rgb(0, 0, 0); /* Color del icono */
+}
+
+.custom-tech-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+.info-box {
+  font-size: 1.2rem;
+  color: #f8f5f5;
+  background-color: #0f0e0ecc;
+  padding: 15px;
+  border-radius: 8px;
+}
+.titulo-proyecto{
+    font-size: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    align-items: center;
+    border-right: 3px solid #ffffff;
+    animation: typing 4s steps(20, end), blink 0.7s step-end infinite;
+}
+/*boton Linkedin*/
+.linkedin{
+  font-size: 20px;
+  color: #06a0f4;
+  /*animation: blink 1s infinite;  Animación de parpadeo */
+}
+/*animacion de parpadeo para el icono*/
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;/* Totalmente visible */
+  }
+  50% {
+    opacity:  0;
+
+  }
+}
+ /* Animación de escritura */
+ @keyframes typing {
+    from {
+        width: 0; /* Inicia con el texto invisible */
+    }
+    to {
+        width: 18ch; /* Longitud del texto que se va a escribir */
+    }
+}
+ /* Animación del cursor (parpadeo) */
+ @keyframes blink {
+    50% {
+        border-color: transparent; /* Hace invisible el cursor al 50% de la animación */
+    }
+}
+
+/* Contenedor de los íconos sociales */
+.social-icons {
+    display: flex;
+    gap: 50px; /* Aumenta la separación entre los íconos */
+    align-items: end; /* Alinea verticalmente los íconos */
+}
+
+/* Tamaño y transición de los íconos */
+.social-icons svg {
+    width: 30px;
+    height: px;
+    transition: fill 0.3s ease;
+}
+
+
+.evento-digital {
+  background: #ffffff; /* Fondo claro */
+  padding: 3rem 1rem;
+}
+.evento-digital .container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-text {
+  max-width: 500px;
+}
+
+.evento-text h2 {
+  font-size: 2.5rem;
+}
+
+.evento-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.tecnologias span {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 0.9rem;
+}
+
+.evento-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 400px;
+}
+
+.evento-digital .container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.evento-digital .evento-image img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-digital .evento-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo general para todas las imágenes */
+.mockup {
+  width: 90%; /* Ajusta el ancho al 90% de su contenedor */
+  max-width: 250px; /* Limita el tamaño máximo a 250px */
+  height: auto; /* Mantiene la proporción de las imágenes */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Sombra para dar profundidad */
+  position: absolute; /* Posiciona las imágenes de forma relativa al contenedor */
+}
+
+/* Imagen superior */
+.mockup-top {
+  top: -20px; /* Desplaza hacia arriba */
+  right: 20px; /* Desplaza hacia la derecha */
+  z-index: 2; /* Coloca esta imagen por encima de la inferior */
+}
+
+/* Imagen inferior */
+.mockup-bottom {
+  bottom: -20px; /* Desplaza hacia abajo */
+  left: 20px; /* Desplaza hacia la izquierda */
+  z-index: 1; /* Coloca esta imagen debajo de la superior */
+}
+
+/* Media Query: Estilos específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Cambia la dirección del contenedor a columna y centra el texto */
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Ajusta el ancho de los contenedores al 100% */
+  .evento-text,
+  .evento-image {
+    width: 100%;
+  }
+
+  /* Modifica las imágenes para que sean responsivas */
+  .mockup {
+    position: relative; /* Cambia la posición a relativa para que sigan el flujo normal del documento */
+    margin-bottom: 10px; /* Añade separación entre imágenes */
+  }
+
+  /* Modifica la posición de la imagen superior en pantallas pequeñas */
+  .mockup-top {
+    top: 0; /* Resetea la posición superior */
+    right: auto; /* Desactiva el desplazamiento hacia la derecha */
+    transform: translateY(15px); /* Permite ajustar la posición vertical con más precisión */
+  }
+
+  /* Modifica la posición de la imagen inferior en pantallas pequeñas */
+  .mockup-bottom {
+    bottom: 0; /* Resetea la posición inferior */
+    left: auto; /* Desactiva el desplazamiento hacia la izquierda */
+    transform: translateY(20px); /* Ajusta la posición vertical */
+  }
+}
+/* Alineación del footer */
+footer .nav {
+  margin-left: 1rem; /* Espacio entre el texto y los iconos */
+}
+
+footer .nav li {
+  list-style: none;
+}
+
+footer .nav a {
+  color: inherit; /* Asegura que los íconos tengan el mismo color que el texto */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Transición suave del color */
+}
+
+footer .nav a:hover {
+  color: #cc33b0; /* Cambia el color al pasar el cursor (puedes personalizar este color) */
+}
+
+footer .bi-arrow-up-right {
+  width: 10px; /* Tamaño pequeño de la flecha */
+  height: 10px;
+}
+
+footer .footer-link:hover .bi-arrow-up-right {
+  transform: translateY(-2px); /* Pequeño movimiento hacia arriba al pasar el cursor */
+  transition: transform 0.3s ease;
+}
+
+
+  /* Rotación del icono */
+.rotate-icon {
+    display: inline-block;
+    transform: rotate(360deg);
+    transition: transform 0.3s ease-in-out;
+  }
+/* Botón de scroll con efectos */
+#scroll-button {
+    position: fixed; /* Fija el botón en la pantalla */
+    display: flex; /*Flexbox para centrar el contenido */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    font-size: 2rem; /* Aseguramos que el tamaño del ícono se ajuste */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    z-index: 1000; /* Se asegura de que esté por encima de otros elementos */
+    width: 60px; /* Establecemos un tamaño fijo para el botón */
+    height: 60px; /* Establecemos un tamaño fijo para el botón */
+    border-radius: 50%; /* Hace el botón circular */
+    background-color: #8d8f93; /* Color base */
+    color: rgb(5, 5, 5); /* Color del texto o ícono */
+    border: none; /* Sin borde */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    opacity: 0; /* Oculto inicialmente */
+    transform: translateY(20px); /* Posicionado un poco más abajo */
+    transition: 
+        opacity 0.5s ease, 
+        transform 0.5s ease, 
+        background-color 0.3s ease;
+}
+
+#scroll-button i {
+    font-size: 20px; /* Ajusta el tamaño del ícono */
+  }
+/* Aparece al hacer scroll */
+#scroll-button.show {
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Vuelve a su posición normal */
+    display: flex;
+}
+
+/* Efecto al pasar el cursor */
+#scroll-button:hover {
+    background-color: #494949e8; /* Oscurece el color */
+    transform: translateY(10px); /* Se desplaza hacia abajo */
+}
+
+/* Animación al hacer clic */
+#scroll-button:active {
+    transform: translateY(5px); /* Pequeño desplazamiento al hacer clic */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ajusta la sombra */
+}
+
+/*html {
+    /* Estilo general del documento 
+    background-color: var(--clr-bg); /* Fondo oscuro 
+    font-family: system-ui; /* Fuente del sistema 
+}*/
+  
+  h1 {
+    /* Estilo de los encabezados */
+    font-size: clamp(1rem, 2.5vw + 0.25rem, 1.2rem); /* Tamaño adaptable */
+    font-weight: 500; /* Peso medio */
+    line-height: 1.6; /* Altura de línea */
+  }
+  
+  code,
+  pre {
+    /* Estilo para bloques de código */
+    display: inline-block;
+    color: #38bdf8; /* Azul brillante */
+    border: 1px solid hsl(from var(--clr-primary) h s 50% / 0.5); /* Borde translúcido */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  pre {
+    /* Ajustes para bloques de código largos */
+    white-space: pre-wrap; /* Permite saltos de línea */
+  }
+  
+  em {
+    /* Estilo para texto enfatizado */
+    font-size: 0.8rem; /* Tamaño más pequeño */
+  }
+  .list-tree {
+    /* Variables personalizadas para el árbol de lista */
+    --tree-clr: #c30b79; /* Color de las líneas del árbol */
+    --tree-font-size: 1rem; /* Tamaño de fuente del texto */
+    --tree-item-height: 2; /* Altura de cada ítem en el árbol */
+    --tree-offset: 1.5rem; /* Desplazamiento del texto respecto al borde */
+    --tree-thickness: 2px; /* Grosor de las líneas del árbol */
+    --tree-style: solid; /* Estilo de las líneas (sólidas) */
+}
+.list-tree ul {
+  /* Configuración de las listas */
+  display: grid; /* Se usa una cuadrícula para alinear ítems */
+  list-style: none; /* Elimina las viñetas predeterminadas */
+  font-size: var(--tree-font-size); /* Tamaño de fuente según la variable */
+}
+
+.list-tree li {
+  /* Configuración de los ítems de la lista */
+  line-height: var(--tree-item-height); /* Altura de línea */
+  padding-inline-start: var(--tree-offset); /* Desplazamiento a la derecha */
+  border-left: var(--tree-thickness) var(--tree-style) var(--tree-clr); /* Línea izquierda */
+  position: relative; /* Permite posicionar elementos con ::before y ::after */
+  text-indent: 0.5rem; /* Sangría del texto */
+
+  &:last-child {
+      /* Estilo del último elemento de la lista */
+      border-color: transparent; /* Oculta el borde del último elemento */
+  }
+
+  & span {
+      /* Estilo para textos adicionales dentro de los ítems */
+      font-size: 0.8rem; /* Tamaño más pequeño */
+      font-style: italic; /* Cursiva */
+      font-weight: 100; /* Peso ligero */
+      opacity: 0.65; /* Más transparente */
+  }
+
+  &::before {
+      /* Línea que conecta ítems en la lista */
+      content: '';
+      position: absolute; /* Posiciona relativo al contenedor */
+      top: calc(var(--tree-item-height) / 2 * -1 * var(--tree-font-size) + var(--tree-thickness)); /* Ajuste vertical */
+      left: calc(var(--tree-thickness) * -1); /* Ajuste horizontal */
+      width: calc(var(--tree-offset) + var(--tree-thickness) * 2); /* Anchura */
+      height: calc(var(--tree-item-height) * var(--tree-font-size)); /* Altura */
+      border-left: var(--tree-thickness) var(--tree-style) var(--tree-clr); /* Borde izquierdo */
+      border-bottom: var(--tree-thickness) var(--tree-style) var(--tree-clr); /* Borde inferior */
+  }
+
+  &::after {
+      /* Nodo circular para cada ítem */
+      content: '';
+      position: absolute;
+      width: 6px; /* Diámetro del círculo */
+      height: 6px;
+      border-radius: 50%; /* Hace que sea un círculo */
+      background-color: var(--tree-clr); /* Color del círculo */
+      top: calc(var(--tree-item-height) / 2 * 1rem); /* Ajuste vertical */
+      left: var(--tree-offset); /* Ajuste horizontal */
+      translate: calc(var(--tree-thickness) * -1) calc(var(--tree-thickness) * -1); /* Posiciona el círculo correctamente */
+  }
+
+  & li li {
+      /* Estilo de las sublistas */
+      --tree-style: dotted; /* Cambia el estilo de las líneas a punteadas */
+  }
+}

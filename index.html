@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+<body>
+   
+  <header>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-sm sticky-top" id="navbar">
+      <div class="container-fluid">
+        <!-- Logo o nombre -->
+        <a class="navbar-brand" href="./index.html" aria-label="Inicio">
+          <span class="logo-kc">KC</span>
+        </a>
+  
+        <!-- Botón de colapso -->
+        <button class="navbar-toggler btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <!-- Elementos de la izquierda -->
+          <!-- Elementos alineados a la derecha -->
+          <ul class="navbar-nav ms-auto d-flex align-items-center gap-3">
+            <li class="nav-item">
+              <button type="button" class="btn btn-dark text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: 1rem;">Contacto</button>
+            </li>
+            <li class="nav-item">
+              <a id="theme-toggle" href="javascript:void(0);" class="d-flex align-items-center" style="font-size: 1.5rem; text-decoration: none; color: inherit;">
+                <span id="theme-icon" style="cursor: pointer;">🌙</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+   <!-- Botón de scroll --> 
+  <main>
+  <!-- Canvas para animación -->
+ <canvas id="background"></canvas>
+  <button id="scroll-button">
+    <i class="fa-solid fa-caret-up"></i>
+  </button> 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title text-dark fs-5" id="exampleModalLabel">Contactame...</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="contactForm" action="https://formspree.io/f/mqaakkvn" method="POST">
+          <label class="text-dark" for="name" class="form-label">Nombre:</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="ejemplo: juan perez." required>
+        
+          <label class="text-dark" for="email">Correo:</label>
+          <input type="email" class="form-control" id="email" name="email"placeholder=" correo@gamil.com" required>
+        
+          <label class="text-dark" for="message">Mensaje:</label>
+          <textarea id="message" class="form-control" name="message"placeholder="hola quiero contactarme contigo." required></textarea>
+        
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+        <!-- Contenedor para el ícono de éxito -->
+<div id="successIcon" style="display: none; text-align: center; margin-top: 20px;">
+  <i class="fa fa-check-circle" style="font-size: 48px; color: green;"></i>
+  <p>¡Mensaje enviado con éxito!</p>
+</div>
+<!-- Contenedor para mensajes de error (opcional) -->
+<div id="formResponse" style="display: none; color: red; text-align: center;"></div>
+
+        <!-- Contenedor para mensajes de éxito/error -->
+        <div id="formResponse" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--seccion de titulo-->
+<div class="text-center container border border-light p-3 rounded border-opacity-10 my-5">
+  <h1 class="display-1 fw-bold" id="titulo-proyecto">Kain C</h1>
+  <div class="col-lg-6 mx-auto">
+    <h3 class="display-6">
+      <code class="titulo-proyecto">Analista Programador</code>
+    </h3>
+    <div class="border-top p-2 mt-3">
+      <p class="lead mb-3">
+        Dedicado a crear ideas innovadoras para optimizar procesos y mejorar la experiencia del usuario.
+      </p>
+      <p>
+        <i class="fa-regular fa-envelope"></i> kainCortes07@gmail.com
+      </p>
+      <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+        <!-- Botón LinkedIn -->
+        <a href="https://www.linkedin.com/in/kain-yamir-cortes-tapia-20b88a253/" target="_blank" rel="noopener noreferrer" class="btn btn-primary d-flex align-items-center gap-2 px-4" data-bs-toggle="tooltip" data-bs-placement="bottom" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i> Abierto a Propuestas
+        </a>
+
+        <!-- Línea divisora -->
+        <div class="border-start mx-3" style="height: 40px; width: 1px;"></div>
+
+        <!-- Íconos con Tooltips -->
+        <div class="d-flex gap-3">
+          <!-- Ícono PDF -->
+          <button type="button" class="btn btn-light position-relative" onclick="descargarPDF()" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Descargar CV">
+            <i class="fa-regular fa-file"></i>
+          </button>
+
+          <!-- Ícono GitHub -->
+          <a href="https://github.com/kain-C" target="_blank" rel="noopener noreferrer" class="btn btn-light position-relative" data-bs-toggle="tooltip" data-bs-placement="bottom" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!--Proyectos destacados-->
+  <section class="evento-digital py-5 container border border-light p-2 border-opacity-10 rounded p-2">
+
+    <div class="container p-5  d-flex align-items-center justify-content-between flex-wrap">
+      <!-- Texto del evento -->
+      <div class="evento-text w-50">
+        <h2 class="fw-bold mb-3"><code>Gestor de Dispositivos</code>
+          
+        </h2>
+        <p class="lead fw-semibold">
+          Sistema de Gestion de informacion de disposivos.
+         </p>
+        <p class="text-muted">
+          plataforma diseñada para optimizar la administración, seguimiento y control de los dispositivos. Su propósito principal es mejorar la eficiencia, productividad y rentabilidad en la gestión tecnológica 
+        </p>
+        <div class="tecnologias d-flex flex-wrap gap-2 mt-4">
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/php-logo.png" alt="php logo" class="me-2" width="20"> PHP
+          </span>
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/js-logo.png" alt="js logo" class="me-2" width="20"> JavaScript
+          </span>
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/css-logo.png" alt="css logo" class="me-2" width="20"> CSS
+          </span>
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/bs-logo.png" alt="bootstrap logo" class="me-2" width="20"> Bootstrap
+          </span>
+        </div>
+      </div>
+      <!-- Mockups -->
+      <div class="evento-image w-50 position-relative d-flex justify-content-center">
+        <img src="./img/image2.jpg" alt="Mockup 1" class="mockup mockup-top">
+        <img src="./img/image1.jpg" alt="Mockup 2" class="mockup mockup-bottom">
+      </div>
+    </div>
+
+    
+    <div class="container p-5 d-flex align-items-center justify-content-between flex-wrap">
+      <!-- Texto del evento -->
+      <div class="evento-text w-50">
+        <h2 class="fw-bold mb-3"><code>Mensajería en tiempo real</code></h2>
+        <p class="lead fw-semibold">
+          Comunicación instantánea entre usuarios con sincronización rápida de mensajes.
+        </p>
+        <p class="text-muted">
+          Cchat es una aplicación móvil desarrollada en Android Studio diseñada para facilitar la comunicación en tiempo real entre usuarios. Su objetivo principal es ofrecer una experiencia de mensajería instantánea eficiente y funcional, permitiendo tanto interacciones individuales como grupales.</p>
+        <div class="tecnologias d-flex gap-3 mt-4">
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/Kotlin-logo.png" alt="kotlin logo" class="me-2" width="20"> Kotlin
+          </span>
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/java-logo.png" alt="java logo" class="me-2" width="20"> Java
+          </span>
+        </div>
+      </div>
+      <!-- Mockups -->
+      <div class="evento-image w-50 position-relative d-flex justify-content-center">
+        <img src="./img/logo-chat7.png" alt="Mockup 1" class="mockup mockup-top">
+        <img src="./img/mockup4.png" alt="Mockup 2" class="mockup mockup-bottom">
+      </div>
+    </div>
+ 
+    <div class="container p-5 d-flex align-items-center justify-content-between flex-wrap">
+      <!-- Texto del evento -->
+      <div class="evento-text w-50">
+        <h2 class="fw-bold mb-3"><code>Robotica
+        </code></h2>
+        <p class="lead fw-semibold">
+          "Brazo Robótico" es un modelo 3D desarrollado como prototipo funcional, diseñado utilizando la herramienta Tinkercad. </p>
+        <p class="text-muted">
+          Este proyecto representa un sistema mecánico que combina precisión y eficiencia, ideal para aplicaciones educativas, de investigación o desarrollo tecnológico.</p>
+        <div class="tecnologias d-flex flex-wrap gap-2 mt-4">
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/python-logo.png" alt="python logo" class="me-2" width="20"> Python
+          </span>
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/C_Logo.png" alt="c logo" class="me-2" width="20"> Lenguaje C
+          </span>
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/tk-logo.png" alt="tinkercad logo" class="me-2" width="20"> Tinkercad
+          </span>
+        </div>
+      </div>
+      <!-- Mockups -->
+      <div class="evento-image w-50 position-relative d-flex justify-content-center">
+        <img src="./img/R-5.jpg" alt="Mockup 1" class="mockup mockup-top">
+        <img src="./img/R-1.png" alt="Mockup 2" class="mockup mockup-bottom">
+      </div>
+    </div>
+
+    <div class="container p-5 d-flex align-items-center justify-content-between flex-wrap">
+      <!-- Texto del evento -->
+      <div class="evento-text w-50">
+        <h2 class="fw-bold mb-3"><code>Proyecto de Robótica
+        </code></h2>
+        <p class="lead fw-semibold">
+         Proyecto de Robotica Integrada con Sensores y AI <p class="text-muted">
+          Este proyecto es un prototipo de robot basado en Arduino que incorpora múltiples tecnologías y componentes de hardware y software. <div class="tecnologias d-flex flex-wrap gap-2 mt-4">
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/python-logo.png" alt="python logo" class="me-2" width="20"> Python
+          </span>
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/C_Logo.png" alt="c logo" class="me-2" width="20"> Lenguaje C
+          </span>
+          <span class="badge bg-dark text-light px-3 py-2">
+            <img src="./img/logos/tk-logo.png" alt="tinkercad logo" class="me-2" width="20"> Tinkercad
+          </span>
+        </div>
+      </div>
+      <!-- Mockups -->
+      <div class="evento-image w-50 position-relative d-flex justify-content-center">
+        <img src="./img/mockup17.png" alt="Mockup 1" class="mockup mockup-top">
+        <img src="./img/mockup18.png" alt="Mockup 2" class="mockup mockup-bottom">
+      </div>
+    </div>
+  </section>
+  
+ <!-- Acerca de mí -->
+ <section>
+  <div class="container border border-light  rounded p-2 border-opacity-10 p-5 my-5">
+    <h4 class="display-5 fw-bold text-center text-md-start">Acerca de mí</h4>
+    <div class="row align-items-center">
+      <!-- Columna 1: Imagen y descripción -->
+      <div class="col-12 col-md-4 mb-4 mb-md-0">
+        <div class="border border-light p-2 border-opacity-10 p-3 rounded text-center h-100">
+          <div class="text-center mb-3">
+            <img src="" class="rounded img-fluid" alt="Foto de perfil">
+          </div>
+          <p class="mb-0">
+            Soy un entusiasta de la tecnología y la innovación con experiencia en soporte de sistemas tecnológicos y redes, especialmente en entornos educativos. Apasionado por la robótica y el desarrollo web, me gusta crear soluciones que combinen funcionalidad y personalización, siempre buscando nuevos desafíos para seguir aprendiendo y mejorando mis habilidades técnicas y creativas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Columna 2: Trayectoria estudiantil -->
+      <div class="col-12 col-md-8">
+        <div class="container-fluid p-4 bg-light rounded">
+          <h3 class="fw-bold mb-4">Trayectoria estudiantil <code>Programador</code></h3>
+          <section class="list-tree">
+            <ul class="ps-3">
+              <li>
+                <strong>Analista programador:</strong>
+                <ul>
+                  <li>IT Essentials PC (Hardware and Software).</li>
+                  <li>Arquitectura de Software.</li>
+                  <li>
+                    Programación Básica
+                    <ul>
+                      <li>Programación Avanzada.</li>
+                    </ul>
+                  </li>
+                  <li>Administración de sistemas.</li>
+                  <li>Diseño de software y Bases de datos.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Certificaciones y insignias de Cisco:</strong>
+                <ul>
+                  <li>Iot Networking Academy <span>(Básico)</span>.</li>
+                  <li>NDG Linux Unhatched Cisco Networking Academy.</li>
+                  <li>Conceptos básicos de JavaScript 1.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Tecnologias empleadas-->
+<section>
+  <div class="text-center container border border-light rounded p-2 border-opacity-10 p-5 my-5">
+    <h2 class="display-5">Tecnologías empleadas recientemente</h2>
+    <div class="container-fluid p-5">
+      <div class="tech-grid">
+        <!-- Iconos -->
+        <div class="tech-item" onmouseover="updateInfo('Lenguaje de programación versátil para desarrollo web, ciencia de datos, y más.')" onmouseout="resetInfo()">
+          <img src="./img/logos/python-logo.png" alt="python logo" class="me-2" width="30">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Bases de datos utilizadas para gestionar información de forma eficiente.')" onmouseout="resetInfo()">
+          <img src="./img/logos/database-logo.png" alt="Database logo" class="me-2" width="30">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Sistema de bases de datos ligero y embebido para aplicaciones pequeñas.')" onmouseout="resetInfo()">
+          <img src="./img/logos/SQLite_logo.png" alt="SQLite logo" class="me-2" width="70">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Lenguaje de programación potente para aplicaciones empresariales y móviles.')" onmouseout="resetInfo()">
+          <img src="./img/logos/java-logo.png" alt="java logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Lenguaje dinámico para crear sitios web interactivos.')" onmouseout="resetInfo()">
+          <img src="./img/logos/js-logo.png" alt="javascript logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Estilos en cascada para dar diseño y formato a páginas web.')" onmouseout="resetInfo()">
+          <img src="./img/logos/css-logo.png" alt="css logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Lenguaje moderno para desarrollo de aplicaciones Android y multiplataforma.')" onmouseout="resetInfo()">
+          <img src="./img/logos/Kotlin-logo.png" alt="kotlin logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Lenguaje robusto para aplicaciones empresariales y de escritorio.')" onmouseout="resetInfo()">
+          <img src="./img/logos/Logo_C_sharp.png" alt="c sharp logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Lenguaje para desarrollo web backend eficiente y dinámico.')" onmouseout="resetInfo()">
+          <img src="./img/logos/php-logo.png" alt="php logo" class="me-2" width="50">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Lenguaje de programación basado en JavaScript que añade tipado estático, mejorando la escalabilidad y mantenibilidad de aplicaciones complejas.')" onmouseout="resetInfo()">
+          <img src="./img/logos/Typescript-logo.png" alt="typescript logo" class="me-2" width="50">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Lenguaje de programación clásico para aplicaciones de alto rendimiento.')" onmouseout="resetInfo()">
+          <img src="./img/logos/C_Logo.png" alt="c logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Plataforma para construir y gestionar contenedores de aplicaciones.')" onmouseout="resetInfo()">
+          <img src="./img/logos/docker (1).png" alt="docker logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Librería para construir interfaces de usuario dinámicas y modernas.')" onmouseout="resetInfo()">
+          <img src="./img/logos/react-logo.png" alt="react logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Sistema de bases de datos relacional avanzado y open source.')" onmouseout="resetInfo()">
+          <img src="./img/logos/postgresql.png" alt="postgresql logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Framework de diseño web responsivo con estilos elegantes.')" onmouseout="resetInfo()">
+          <img src="./img/logos/bs-logo.png" alt="Boostrap logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Plataforma para desarrollar aplicaciones en tiempo real.')" onmouseout="resetInfo()">
+          <img src="./img/logos/firabase-logo.png" alt="firebase logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Suite de herramientas creativas para diseño y edición multimedia.')" onmouseout="resetInfo()">
+          <img src="./img/logos/adobe-logo.png" alt="adobe logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Software de modelado 3D y animación open source.')" onmouseout="resetInfo()">
+          <img src="./img/logos/blender-logo.png" alt="blender logo" class="me-2" width="40">
+        </div>
+        <div class="tech-item" onmouseover="updateInfo('Herramienta online para diseño y modelado en 3D.')" onmouseout="resetInfo()">
+          <img src="./img/logos/tk-logo.png" alt="tinkercad logo" class="me-2" width="40">
+        </div>
+      </div>
+      <!-- Mensaje dinámico -->
+      <div id="info-box" class="info-box mt-4">
+        <p>Pasa el cursor sobre un ícono para más información.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<!-- Botón fijo para desplazarse al título -->
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
+  <div class="container d-flex justify-content-center align-items-center">
+    <span>&copy; 2024 Kain C.</span>
+    <ul class="nav list-unstyled d-flex ms-3">
+      <li class="me-3">
+        <a href="https://github.com/kain-C" target="_blank" aria-label="GitHub" class="footer-link">
+          <i class="fab fa-github fa-lg"></i> Github
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-up-right ms-1" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/kain-yamir-cortes-tapia-20b88a253/" target="_blank" aria-label="LinkedIn" class="footer-link">
+          <i class="fab fa-linkedin fa-lg"></i> LinkedIn
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-up-right ms-1" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.tinkercad.com/users/cAfoqUWX8wO?type=blocks" target="_blank" aria-label="LinkedIn" class="footer-link">
+          <img src="./img/logos/tk-logo.png" alt="tinkercad logo" class="me-2" width="20">Tinkercad
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-up-right ms-1" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+ $(document).ready(function () {
+  // Cargar el navbar desde un archivo externo y luego inicializar el cambio de tema
+  $("#navbar").load("./navbar.html", function () {
+    initializeThemeToggle();
+  });
+});
+function initializeThemeToggle() {
+  const themeToggleButton = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+
+  if (themeToggleButton) {
+    themeToggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
+      document.body.classList.toggle("light-theme");
+
+      // Cambiar el ícono del tema con animación
+      if (themeIcon) {
+        themeIcon.textContent = themeIcon.textContent === "🌙" ? "☀️" : "🌙";
+        themeIcon.classList.add("rotate-icon");
+        setTimeout(() => themeIcon.classList.remove("rotate-icon"), 300);
+      }
+      // Guardar el tema actual en localStorage
+      const currentTheme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+      localStorage.setItem("theme", currentTheme);
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+});
+
+
+
+
+
+
+
+
+  // JavaScript para el botón de scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollButton = document.getElementById('scroll-button');
+
+    if (scrollButton) {
+      window.addEventListener('scroll', () => {
+        scrollButton.classList.toggle('show', window.scrollY > 200);
+      });
+
+      scrollButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  });
+
+  // Función para descargar PDF
+  function descargarPDF() {
+    const enlace = document.createElement('a');
+    enlace.href = './Kain_cortes.pdf';
+    enlace.download = 'Kain_cortes.pdf';
+    enlace.click();
+  }
+
+  // Manejo del formulario de contacto
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita el envío estándar del formulario
+
+        const form = event.target;
+        const formData = new FormData(form);
+
+        // Envía los datos al endpoint de Formspree
+        fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+          .then(response => {
+            if (response.ok) {
+              // Muestra el ícono de éxito
+              const successIcon = document.getElementById("successIcon");
+              if (successIcon) successIcon.style.display = "block";
+
+              // Oculta el ícono después de 2 segundos
+              setTimeout(() => {
+                if (successIcon) successIcon.style.display = "none";
+              }, 2000);
+
+              form.reset(); // Limpia el formulario
+            } else {
+              // Muestra un mensaje de error
+              document.getElementById("formResponse").style.display = "block";
+              document.getElementById("formResponse").innerHTML = "Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.";
+            }
+          })
+          .catch(error => {
+            // Muestra un mensaje si ocurre un error de red
+            document.getElementById("formResponse").style.display = "block";
+            document.getElementById("formResponse").innerHTML = "Hubo un problema al enviar el mensaje. Intenta más tarde.";
+          });
+      });
+    }
+  });
+
+  // Cambiar el contenido del cuadro de información al pasar el cursor
+  function updateInfo(info) {
+    const infoBox = document.getElementById("info-box");
+    if (infoBox) infoBox.innerHTML = `<p>${info}</p>`;
+  }
+
+  // Restaurar el mensaje inicial cuando el cursor se quita
+  function resetInfo() {
+    const infoBox = document.getElementById("info-box");
+    if (infoBox) infoBox.innerHTML = `<p>Pasa el cursor sobre un ícono para más información.</p>`;
+  }
+
+</script>
+
+</body>
+</html>

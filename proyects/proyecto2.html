@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+.hero-section {
+  position: relative; /* Posiciona el elemento relativo para que los hijos puedan ser posicionados de manera absoluta. */
+  display: flex; /* Usa flexbox para organizar el contenido. */
+  align-items: center; /* Centra verticalmente los elementos dentro de la sección. */
+  justify-content: space-between; /* Coloca los elementos separados horizontalmente. */
+  color: white; /* Define el color del texto como blanco. */
+  background-color: #000; /* Fondo oscuro (negro). */
+  padding: 2rem; /* Espaciado interno de 2 rem alrededor del contenido. */
+  overflow: hidden; /* Esconde cualquier contenido que se desborde fuera del contenedor. */
+  height: 60vh; /* La altura del contenedor es el 60% de la ventana del navegador. */
+}
+
+.hero-content {
+  position: relative; /* Asegura que este elemento se posicione dentro del flujo normal. */
+  z-index: 2; /* Coloca este elemento por encima de otros con valores de índice menores (como el gradiente). */
+  max-width: 40%; /* Limita el ancho del contenido al 40% del contenedor padre. */
+}
+
+.hero-content h1 {
+  font-size: 2.5rem; /* Define un tamaño de fuente grande para el encabezado principal. */
+  margin-bottom: 1rem; /* Espacio inferior de 1 rem para separar del siguiente elemento. */
+}
+
+.hero-content p {
+  font-size: 1.2rem; /* Tamaño de fuente un poco más pequeño para el párrafo. */
+  margin-bottom: 1.5rem; /* Espacio inferior de 1.5 rem para separar del siguiente elemento. */
+  line-height: 1.5; /* Altura de línea para mejorar la legibilidad del texto. */
+}
+
+.hero-content .buttons button {
+  background-color: #075985; /* Fondo azul oscuro para los botones. */
+  color: white; /* Texto en color blanco para contraste. */
+  border: none; /* Sin borde alrededor de los botones. */
+  padding: 0.8rem 1.2rem; /* Espaciado interno vertical y horizontal. */
+  margin-right: 1rem; /* Espaciado a la derecha entre botones. */
+  border-radius: 5px; /* Bordes redondeados de 5 píxeles. */
+  cursor: pointer; /* Cambia el cursor a "mano" al pasar por encima del botón. */
+  font-size: 1rem; /* Tamaño de fuente del texto del botón. */
+}
+
+.hero-content .buttons button:hover {
+  background-color: #05436c; /* Cambia el color de fondo cuando el usuario pasa el cursor sobre el botón. */
+}
+
+.hero-images {
+  position: absolute; /* Permite posicionar este contenedor fuera del flujo normal. */
+  top: 0; /* Alinea la parte superior de este contenedor con su contenedor padre. */
+  right: 0; /* Alinea la parte derecha con su contenedor padre. */
+  display: flex; /* Usa flexbox para organizar las imágenes (si hay más de una). */
+  flex-direction: row; /* Las imágenes se posicionarán en una fila horizontal. */
+  height: 100%; /* Altura completa del contenedor padre. */
+  width: 60%; /* El ancho ocupa el 60% del contenedor padre. */
+  overflow: hidden; /* Esconde cualquier contenido que sobresalga del contenedor. */
+}
+
+.hero-img {
+  height: 100%; /* La imagen ocupa toda la altura del contenedor. */
+  width: auto; /* El ancho se ajusta automáticamente para mantener la proporción. */
+  object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor sin deformarse. */
+  opacity: 0.8; /* Hace que la imagen sea ligeramente transparente. */
+}
+
+.hero-section::before {
+  content: ""; /* Crea un elemento pseudo que actúa como un fondo adicional. */
+  position: absolute; /* Se posiciona dentro del contenedor principal. */
+  top: 0; /* Alinea la parte superior del pseudo-elemento con su contenedor. */
+  left: 0; /* Alinea la parte izquierda del pseudo-elemento con su contenedor. */
+  height: 100%; /* Altura completa del contenedor padre. */
+  width: 100%; /* Ancho completo del contenedor padre. */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 100%); 
+  /* Gradiente que va de negro con opacidad al 80% a transparente. */
+  z-index: 1; /* Asegura que el gradiente quede detrás del contenido principal. */
+}
+
+
+</style>
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Construyendo un nuevo legado</h1>
+      <p>
+        Representamos el futuro del diseño y la innovación, enfocándonos en sostenibilidad y soluciones inteligentes.
+      </p>
+      <div class="buttons">
+        <button>Ver más (30 seg.)</button>
+        <button>Soluciones de la industria</button>
+      </div>
+    </div>
+    <div class="hero-images">
+      <img src="../img/image2.jpg" class="hero-img" alt="Primera Imagen">
+      </div>
+  </div>
+  
+      
+</html>

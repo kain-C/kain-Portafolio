@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aros Concéntricos</title>
+    <style>
+        /* Fondo general */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #000; /* Fondo negro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal */
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        /* Aros concéntricos */
+        .circle {
+            position: absolute;
+            border: 3px solid white; /* Bordes blancos */
+            border-radius: 50%; /* Círculo perfecto */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scaleY(0.6); /* Escala en eje Y */
+        }
+
+        /* Tamaños de los aros */
+        .circle:nth-child(1) { width: 350px; height: 350px; }
+        .circle:nth-child(2) { width: 300px; height: 300px; }
+        .circle:nth-child(3) { width: 250px; height: 250px; }
+        .circle:nth-child(4) { width: 200px; height: 200px; }
+        .circle:nth-child(5) { width: 150px; height: 150px; }
+
+        /* Círculo central amarillo */
+        .center-circle {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: yellow; /* Color amarillo */
+            border-radius: 50%; /* Círculo perfecto */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px yellow; /* Efecto de brillo */
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Aros concéntricos -->
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <!-- Círculo amarillo en el centro -->
+        <div class="center-circle"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efecto de Escritura</title>
+    <style>
+        /* Estilo general */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #1e1e1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Courier New", Courier, monospace;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Contenedor del título */
+        .typing-title {
+            font-size: 2.5rem;
+            white-space: nowrap; /* Evita que el texto haga saltos de línea */
+            overflow: hidden; /* Oculta el texto que aún no se ha "escrito" */
+            border-right: 3px solid #ffffff; /* Crea el efecto de cursor */
+            animation: typing 4s steps(20, end), blink 0.7s step-end infinite;
+        }
+
+        /* Animación de escritura */
+        @keyframes typing {
+            from {
+                width: 0; /* Inicia con el texto invisible */
+            }
+            to {
+                width: 18ch; /* Longitud del texto que se va a escribir */
+            }
+        }
+
+        /* Animación del cursor (parpadeo) */
+        @keyframes blink {
+            50% {
+                border-color: transparent; /* Hace invisible el cursor al 50% de la animación */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Título con efecto de escritura -->
+    <h1 class="typing-title">Bienvenido a mi Página</h1>
+</body>
+</html>

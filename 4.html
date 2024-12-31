@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Círculos con Efecto 3D</title>
+    <style>
+        /* Estilo general */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #000; /* Fondo negro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal con perspectiva */
+        .scene {
+            perspective: 1000px; /* Profundidad 3D */
+        }
+
+        /* Contenedor de los círculos */
+        .circle-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d; /* Mantiene el efecto 3D */
+            animation: rotateScene 10s linear infinite; /* Animación de rotación */
+        }
+
+        /* Círculos */
+        .circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #fff; /* Borde blanco */
+            border-radius: 50%; /* Círculos */
+            transform-origin: center center; /* Punto de transformación */
+        }
+
+        /* Cada círculo se inclina y se ubica en el espacio */
+        .circle:nth-child(1) {
+            transform: rotateX(60deg) rotateY(30deg) translateZ(0px);
+        }
+        .circle:nth-child(2) {
+            transform: rotateX(-60deg) rotateY(-30deg) translateZ(30px);
+            border-color: #ff6347; /* Borde de color rojo-naranja */
+        }
+        .circle:nth-child(3) {
+            transform: rotateX(30deg) rotateY(60deg) translateZ(-30px);
+            border-color: #00bfff; /* Borde de color azul */
+        }
+        .circle:nth-child(4) {
+            transform: rotateX(-30deg) rotateY(-60deg) translateZ(60px);
+            border-color: #32cd32; /* Borde de color verde */
+        }
+
+        /* Círculo rojo central */
+        .center-circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px red; /* Brillo */
+        }
+
+        /* Animación de rotación de toda la escena */
+        @keyframes rotateScene {
+            from {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            to {
+                transform: rotateY(360deg) rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor con perspectiva -->
+    <div class="scene">
+        <div class="circle-container">
+            <!-- Círculos en 3D -->
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <!-- Círculo rojo en el centro -->
+            <div class="center-circle"></div>
+        </div>
+    </div>
+</body>
+</html>
